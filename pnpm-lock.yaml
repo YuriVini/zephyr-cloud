@@ -1,0 +1,23 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@react-native/gradle-plugin':
+        specifier: ^0.80.2
+        version: 0.80.2
+
+packages:
+
+  '@react-native/gradle-plugin@0.80.2':
+    resolution: {integrity: sha512-C5/FYbIfCXPFjF/hIcWFKC9rEadDDhPMbxE7tarGR9tmYKyb9o7fYvfNe8fFgbCRKelMHP0ShATz3T73pHHDfA==}
+    engines: {node: '>=18'}
+
+snapshots:
+
+  '@react-native/gradle-plugin@0.80.2': {}
