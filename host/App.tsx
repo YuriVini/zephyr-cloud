@@ -7,28 +7,29 @@ const products = [
   {id: '3', name: 'Product 3', price: 300, quantity: 3},
 ];
 
-const CartButton = lazy(() =>
-  // @ts-ignore federated dts not enabled yet
-  import('Cart/CartButton').then(module => ({default: module.CartButton})),
+const CartButton = lazy(
+  () =>
+    // @ts-ignore federated dts not enabled yet
+    import('Cart/CartButton'),
 );
 
-// const CartList = lazy(
-//   () =>
-//     // @ts-ignore federated dts not enabled yet
-//     import('Cart/CartList'),
-// );
+const CartList = lazy(
+  () =>
+    // @ts-ignore federated dts not enabled yet
+    import('Cart/CartList'),
+);
 
 function App(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} />
       <ScrollView style={styles.scrollView}>
+        <Suspense fallback={<Text>Loading... CartList</Text>}>
+          <CartList products={products} />
+        </Suspense>
         <Suspense fallback={<Text>Loading ... CartButton</Text>}>
           <CartButton />
         </Suspense>
-        {/* <Suspense fallback={<Text>Loading... CartList</Text>}>
-          <CartList products={products} />
-        </Suspense> */}
       </ScrollView>
     </View>
   );
