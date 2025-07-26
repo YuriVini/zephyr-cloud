@@ -12,12 +12,11 @@ const CartButton = lazy(() =>
   import('Cart/CartButton').then(module => ({default: module.CartButton})),
 );
 
-const CartList = lazy(() =>
-  // @ts-ignore federated dts not enabled yet
-  import('Cart/CartList').then(module => ({default: module.CartList})),
-);
-
-console.log('CartList', CartList);
+// const CartList = lazy(
+//   () =>
+//     // @ts-ignore federated dts not enabled yet
+//     import('Cart/CartList'),
+// );
 
 function App(): React.JSX.Element {
   return (
@@ -27,9 +26,9 @@ function App(): React.JSX.Element {
         <Suspense fallback={<Text>Loading ... CartButton</Text>}>
           <CartButton />
         </Suspense>
-        <Suspense fallback={<Text>Loading ... CartList</Text>}>
+        {/* <Suspense fallback={<Text>Loading... CartList</Text>}>
           <CartList products={products} />
-        </Suspense>
+        </Suspense> */}
       </ScrollView>
     </View>
   );

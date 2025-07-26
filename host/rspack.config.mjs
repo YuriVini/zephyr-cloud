@@ -40,7 +40,8 @@ const config = env => {
       filename: 'Host.container.js.bundle',
       dts: false,
       remotes: {
-        Cart: `Cart@http://localhost:8082/${platform}/Cart.container.js.bundle`,
+        // Cart: `Cart@http://localhost:8082/${platform}/Cart.container.js.bundle`,
+        Cart: 'https://yuri-ferreira-oliveira-433-cart-zephyr-cloud-yuri-83965c3c9-ze.zephyrcloud.app'
       },
       shared: {
         react: {
