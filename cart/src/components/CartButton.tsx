@@ -1,15 +1,13 @@
 import {Alert, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 function CartButton() {
-  console.log('CartButton');
-
   const handlePress = () => {
-    Alert.alert('CartButton pressed');
+    Alert.alert('Cart screen will be ready soon');
   };
 
   return (
     <TouchableOpacity style={styles.button} onPress={handlePress}>
-      <Text style={styles.buttonText}>Show Alert</Text>
+      <Text style={styles.buttonText}>Cart</Text>
     </TouchableOpacity>
   );
 }
@@ -21,10 +19,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    minWidth: 120,
+    width: '25%',
+    marginTop: 16,
+    alignSelf: 'flex-end',
+    marginHorizontal: 16,
   },
   buttonText: {
     fontSize: 16,
+    color: 'white',
     fontWeight: '600',
   },
 });
