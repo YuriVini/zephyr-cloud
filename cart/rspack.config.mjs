@@ -1,7 +1,6 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as Repack from '@callstack/repack';
-import { withZephyr } from 'zephyr-repack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +12,7 @@ const __dirname = path.dirname(__filename);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-const config = env => ({
+export default {
   context: __dirname,
   entry: './index.js',
   resolve: {
@@ -26,7 +25,4 @@ const config = env => ({
     ],
   },
   plugins: [new Repack.RepackPlugin()],
-});
-
-
-export default withZephyr()(config);
+};
