@@ -39,7 +39,8 @@ export default withZephyr()(env => {
       filename: 'Cart.container.js.bundle',
       dts: false,
       exposes: {
-        './CartButton': './src/components/cart-button',
+        './CartButton': './src/components/CartButton.tsx',
+        './CartList': './src/components/CartList.tsx',
       },
       shared: {
         react: {
