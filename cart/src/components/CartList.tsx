@@ -1,6 +1,15 @@
 import {View, Text} from 'react-native';
 
-export default function CartList({products}: {products: any[]}) {
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+function CartList({products}: {products: Product[]}) {
+  console.log('CartList');
+
   return (
     <View>
       <Text>Product List</Text>
@@ -14,3 +23,5 @@ export default function CartList({products}: {products: any[]}) {
     </View>
   );
 }
+
+export default CartList;
