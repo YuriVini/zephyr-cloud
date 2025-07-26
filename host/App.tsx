@@ -1,18 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React, {lazy, Suspense} from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
 
 const products = [
   {id: '1', name: 'Product 1', price: 100, quantity: 1},
@@ -30,15 +17,19 @@ const CartList = lazy(() =>
   import('Cart/CartList').then(module => ({default: module.CartList})),
 );
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+console.log('CartList', CartList);
 
+function App(): React.JSX.Element {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={'dark-content'} />
       <ScrollView style={styles.scrollView}>
-        <CartButton />
-        <CartList products={products} />
+        <Suspense fallback={<Text>Loading ... CartButton</Text>}>
+          <CartButton />
+        </Suspense>
+        <Suspense fallback={<Text>Loading ... CartList</Text>}>
+          <CartList products={products} />
+        </Suspense>
       </ScrollView>
     </View>
   );
