@@ -41,8 +41,6 @@ const config = env => {
       dts: false,
       remotes: {
         Cart: `Cart@http://localhost:8082/${platform}/Cart.container.js.bundle`,
-        // Cart: 'https://yuri-ferreira-oliveira-149-cart-zephyr-cloud-yuri-d54abc17e-ze.zephyrcloud.app',
-        //Cart: 'https://yuri-ferreira-oliveira-254-cart-zephyr-cloud-yuri-770a31aad-ze.zephyrcloud.app',
       },
       shared: {
         react: {
