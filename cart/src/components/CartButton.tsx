@@ -1,11 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 function CartButton() {
   console.log('CartButton');
+
+  const handlePress = () => {
+    Alert.alert('CartButton pressed');
+  };
+
   return (
-    <View style={styles.button}>
-      <Text style={styles.buttonText}>Cart Button</Text>
-    </View>
+    <TouchableOpacity style={styles.button} onPress={handlePress}>
+      <Text style={styles.buttonText}>Show Alert</Text>
+    </TouchableOpacity>
   );
 }
 
